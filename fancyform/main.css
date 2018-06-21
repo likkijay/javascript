@@ -1,0 +1,155 @@
+:root {
+  --error: #ff2d26;
+  --light: #9e9e9e;
+  --primary: #428bca;
+  --secondary: #b9d4ec;
+}
+
+body {
+  background-color: var(--primary);
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+.logo {
+  color: #fff;
+  font-family: Pacifico, cursive;
+  font-size: 4em;
+}
+
+.end {
+  color: #fff;
+  opacity: 0;
+  position: relative;
+  transition: .8s ease-in-out;
+}
+
+#container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: top;
+}
+
+#form-box {
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.1),
+              0 6px 10px 5px rgba(0, 0, 0, 0.1),
+              0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform .1s ease-in-out;
+  width: 600px;
+}
+
+#form-box.close {
+  box-shadow: none;
+  overflow: hidden;
+  padding: 0;
+  transition: .8s ease-in-out;
+  width: 0;
+}
+
+#next-btn {
+  bottom: 10px;
+  color: var(--primary);
+  cursor: pointer;
+  float: right;
+  font-size: 40px;
+  position: absolute;
+  right: 20px;
+  z-index: 2;
+}
+
+#next-btn:hover {
+  color: var(--secondary);
+}
+
+#prev-btn {
+  color: var(--light);
+  cursor: pointer;
+  float: right;
+  font-size: 18px;
+  left: 30px;
+  position: absolute;
+  top: 12px;
+  z-index: 2;
+}
+
+#prev-btn:hover {
+  color: var(--secondary);
+}
+
+#input-group {
+  margin: 10px 60px 10px 10px;
+  opacity: 0;
+  padding: 30px 20px 20px 20px;
+  position: relative;
+  transition: opacity .3s ease-in-out;
+}
+
+#input-group input {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  position: relative;
+  width: 100%;
+}
+
+#input-label {
+  color: var(--secondary);
+  font-size: 20px;
+  font-weight: bold;
+  left: 20px;
+  pointer-events: none;
+  position: absolute;
+  top: 32px;
+  transition: .2s ease-in-out;
+}
+
+#input-group input:valid + #input-label {
+  color: var(--light);
+  font-size: 11px;
+  font-weight: normal;
+  left: 42px;
+  margin-left: 0 !important;
+  top: 6px;
+}
+
+#input-progress {
+  border-bottom: 3px solid var(--primary);
+  transition: width .6s ease-in-out;
+  width: 0;
+}
+
+#progress-bar {
+  background-color: var(--secondary);
+  height: 10px;
+  position: absolute;
+  transition: width .5s ease-in-out;
+  width: 0;
+}
+
+.close #next-btn, .close #prev-btn {
+  color: #fff;
+}
+
+.error #input-progress {
+  border-color: var(--error);
+}
+
+.error #next-btn {
+  color: var(--error);
+}
+
+@media screen and (max-width: 600px) {
+  #form-box {
+    width: 80%;
+  }
+}
