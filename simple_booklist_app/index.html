@@ -8,39 +8,10 @@
     <title>Simple Booklist App</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
-    <style>
-        @keyframes alert {
-            0% {
-                transform: translateY(-200px);
-            }
-            20% {
-                transform: translateY(0);
-            }
-            80% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-200px);
-            }
-        }
-
-        .custom-alert {
-            animation-name: alert;
-            animation-duration: 5s;
-            animation-fill-mode: backwards;
-            animation-timing-function: ease-in-out;
-            border-radius: 4px;
-            position: absolute;
-            right: 60px;
-            transform: translateY(-200px);
-        }
-
-        .custom-alert:nth-child(1n+1) {
-
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <ul class="toasts"></ul>
     <div class="container my-4">
         <h1 class="display-4 text-center mb-4">
             <i class="fas fa-book-open text-primary"></i> My<span class="text-primary">Book</span>List
